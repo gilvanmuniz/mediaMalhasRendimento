@@ -9,33 +9,36 @@ public class MediaRendimentoDataModel {
     //TUPLA OU REGISTROS
     //CRIAR DINAMICAMENTE UMA query SQL para criar a tabela de RENDIMENTOS
 
-    private static final String TABELA = "rendimanto";
-    private static final String id = "id";
-    private static final String product = "produto";
-    private static final String mesh = "malha";
-    private static final String type = "tipo";
-    private static final String color = "cor";
-    private static final String weight = "peso";
-    private static final String data = "data";
-    private static final String adult = "adulto";
-    private static final String children = "infantil";
-    private static final String custom = "personalizar";
+    private final static  String TABELA = "rendimanto";
 
-    private static String queryCriarTabela = " ";
+    private final static String id = "id";
+    private final static String product = "produto";
+    private final static String mesh = "malha";
+    private final static String type = "tipo";
+    private final static String color = "cor";
+    private final static String weight = "peso";
+    private final static String data = "data";
+    private final static String adult = "adulto";
+    private final static String children = "infantil";
+    private final static String custom = "personalizar";
 
-    public String criarTabela(){
+    private static String queryCriarTabela = "";
 
-        queryCriarTabela += "CREATE TABLE IF NOT EXISTS " + TABELA +
-                "(" + id + "INTEGER PRIMARY KEY," +
-                      product + "VARCHAR(30)," +
-                      mesh + "VARCHAR(30)," +
-                      type + "VARCHAR(30)," +
-                      color + "VARCHAR(30)," +
-                      weight + "VARCHAR(30)," +
-                      data + "DATE," +
-                      adult + "VARCHAR(30)," +
-                      children + "TINYINT," +
-                      custom + " boolean )";
+    public static String criarTabela(){
+
+         queryCriarTabela =   "CREATE TABLE " + TABELA ;
+         queryCriarTabela +=  "(";
+         queryCriarTabela +=  id + " INTEGER PRIMARY KEY, " ;
+         queryCriarTabela +=  product + " TEXT, " ;
+         queryCriarTabela +=  mesh + " TEXT, " ;
+         queryCriarTabela +=  type + " TEXT, " ;
+         queryCriarTabela +=  color + " TEXT, ";
+         queryCriarTabela +=  weight + " TEXT, ";
+         queryCriarTabela +=  data + " NUMERIC, " ;
+         queryCriarTabela +=  adult + " NUMERIC, ";
+         queryCriarTabela +=  children + " NUMERIC, ";
+         queryCriarTabela +=  custom + " NUMERIC ";
+         queryCriarTabela +=  " )";
 
                 return queryCriarTabela;
 
@@ -89,8 +92,6 @@ public class MediaRendimentoDataModel {
         return queryCriarTabela;
     }
 
-    public static void setQueryCriarTabela(String queryCriarTabela) {
-        MediaRendimentoDataModel.queryCriarTabela = queryCriarTabela;
-    }
+
 
 }//fim da classe

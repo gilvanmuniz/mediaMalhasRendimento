@@ -26,7 +26,7 @@ public class DataSource extends SQLiteOpenHelper {
 
         try {
 
-            db.execSQL(MediaRendimentoDataModel.getQueryCriarTabela());
+            db.execSQL(MediaRendimentoDataModel.criarTabela());
 
         }catch (Exception e){
             Log.e("Media", "--> ERRO: " + e.getMessage());
@@ -35,7 +35,9 @@ public class DataSource extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db,
+                          int oldVersion,
+                          int newVersion) {
 
     }
 }
