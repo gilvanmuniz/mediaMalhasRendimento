@@ -1,7 +1,5 @@
 package com.example.mediarendimentomalhas.datamodel;
 
-import java.util.Date;
-
 public class MediaRendimentoDataModel {
 
     //DADOS PARA CRIAR TABELAS NO DATABASE
@@ -28,7 +26,7 @@ public class MediaRendimentoDataModel {
 
          queryCriarTabela =   "CREATE TABLE " + TABELA ;
          queryCriarTabela +=  "(";
-         queryCriarTabela +=  id + " INTEGER PRIMARY KEY, " ;
+         queryCriarTabela +=  id + " INTEGER PRIMARY KEY AUTOINCREMENT, " ;
          queryCriarTabela +=  product + " TEXT, " ;
          queryCriarTabela +=  mesh + " TEXT, " ;
          queryCriarTabela +=  type + " TEXT, " ;

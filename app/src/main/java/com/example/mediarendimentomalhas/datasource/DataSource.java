@@ -1,13 +1,12 @@
 package com.example.mediarendimentomalhas.datasource;
 
+import android.content.ContentValues;
 import android.content.Context;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.mediarendimentomalhas.datamodel.MediaRendimentoDataModel;
-import com.example.mediarendimentomalhas.model.MediaRendimento;
 
 public class DataSource extends SQLiteOpenHelper {
 
@@ -38,6 +37,20 @@ public class DataSource extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db,
                           int oldVersion,
                           int newVersion) {
+
+    }
+
+    public boolean insert(String tabela, ContentValues dados){
+
+        boolean success = true;
+        try{
+            success = db.insert(tabela,null, dados) > 0;
+        }
+        catch(Exception e){
+            success = false;
+        }
+
+        return success;
 
     }
 }

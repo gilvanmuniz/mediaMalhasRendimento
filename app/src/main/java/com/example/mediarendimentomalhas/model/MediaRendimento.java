@@ -66,15 +66,15 @@ public class MediaRendimento {
         this.weight = weight;
     }
 
-    public Date getData() {
-        return data;
+    public String getData() {
+        return String.valueOf(data);
     }
 
     public void setData(Date data) {
         this.data = data;
     }
 
-    public boolean isAdult() {
+    public boolean getAdult() {
         return adult;
     }
 
@@ -82,7 +82,7 @@ public class MediaRendimento {
         this.adult = adult;
     }
 
-    public boolean isChildren() {
+    public boolean getChildren() {
         return children;
     }
 
@@ -90,7 +90,7 @@ public class MediaRendimento {
         this.children = children;
     }
 
-    public boolean isCustom() {
+    public boolean getCustom() {
         return custom;
     }
 
