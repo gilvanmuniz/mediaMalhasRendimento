@@ -8,10 +8,13 @@ import android.util.Log;
 
 import com.example.mediarendimentomalhas.datamodel.MediaRendimentoDataModel;
 
+
 public class DataSource extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "media_rendimento.sqlite";
     private static final int DB_VERSION = 1;
+
+
 
     SQLiteDatabase db;
 
@@ -53,4 +56,19 @@ public class DataSource extends SQLiteOpenHelper {
         return success;
 
     }
+
+        public boolean deletar(String tabela,int id){
+
+            boolean success = true;
+            try{
+                success = db.delete(tabela, "id=?",
+                        new String[]{Integer.toString(id)}) > 0;
+            }
+            catch(Exception e){
+                success = false;
+            }
+
+            return success;
+
+        }
 }

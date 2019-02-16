@@ -38,6 +38,7 @@ public class SplashActivity extends AppCompatActivity {
                 MediaRendimentoController mediaRendimentoController =
                         new MediaRendimentoController(getBaseContext());
 
+                //TODO: Remover esse código
 
                 obj.setProduct("Camiseta");
                 obj.setMesh("algodao");
@@ -47,7 +48,15 @@ public class SplashActivity extends AppCompatActivity {
                 obj.setData(new Date());
                 obj.setAdult(true);
 
-                mediaRendimentoController.salvar(obj);
+                /* USADO FOR PARA POPULAR O database.
+
+                for(int i =0; i < 5; i++){
+
+                    mediaRendimentoController.salvar(obj);
+                }
+                */
+                obj.setId(1);
+                mediaRendimentoController.deletar(obj);
 
                 Intent telaPrincipal
                         = new Intent(SplashActivity.this,

@@ -14,7 +14,7 @@ public class MediaRendimentoController extends DataSource {
         super(context);
     }
 
-    public boolean salvar(MediaRendimento obj ){
+    public boolean salvar(MediaRendimento obj){
 
         boolean success = true;
 
@@ -35,5 +35,19 @@ public class MediaRendimentoController extends DataSource {
         return success;
 
     } //fim do método salvar
+
+    public boolean deletar(MediaRendimento obj){
+
+        boolean success = deletar(MediaRendimentoDataModel.getTABELA(), obj.getId());
+
+        return true;
+    }
+
+    public boolean alterar(MediaRendimento obj){
+
+        boolean success = true;
+
+        return true;
+    }
 
 } //fim da classe
