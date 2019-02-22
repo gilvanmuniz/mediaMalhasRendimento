@@ -7,6 +7,8 @@ import com.example.mediarendimentomalhas.datamodel.MediaRendimentoDataModel;
 import com.example.mediarendimentomalhas.datasource.DataSource;
 import com.example.mediarendimentomalhas.model.MediaRendimento;
 
+import java.util.List;
+
 public class MediaRendimentoController extends DataSource {
 
     ContentValues dados;
@@ -43,11 +45,32 @@ public class MediaRendimentoController extends DataSource {
         return true;
     }
 
-    public boolean alterar(MediaRendimento obj){
+    public boolean atualizar(MediaRendimento obj){
 
         boolean success = true;
 
-        return true;
+        dados = new ContentValues();
+
+        dados.put(MediaRendimentoDataModel.getId(), obj.getId());
+        dados.put(MediaRendimentoDataModel.getProduct(), obj.getProduct());
+        dados.put(MediaRendimentoDataModel.getMesh(), obj.getMesh());
+        dados.put(MediaRendimentoDataModel.getType(), obj.getType());
+        dados.put(MediaRendimentoDataModel.getColor(), obj.getColor());
+        dados.put(MediaRendimentoDataModel.getWeight(), obj.getWeight());
+        dados.put(MediaRendimentoDataModel.getData(), obj.getData());
+        dados.put(MediaRendimentoDataModel.getAdult(), obj.getAdult());
+        dados.put(MediaRendimentoDataModel.getChildren(), obj.getChildren());
+        dados.put(MediaRendimentoDataModel.getCustom(), obj.getCustom());
+
+        success = atualizar(MediaRendimentoDataModel.getTABELA(), dados);
+
+        return success;
+
+    } //fim do método atualizar
+
+    public List<MediaRendimento> listar(){
+
+        return getAllMediaRendimentos();
     }
 
 } //fim da classe
